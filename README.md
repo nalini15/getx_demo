@@ -1,3 +1,3 @@
 # getx_demo
 
-❮img src="assets/ss.png" ❯
+<img src="assets/screenshot.png" width="100" >
