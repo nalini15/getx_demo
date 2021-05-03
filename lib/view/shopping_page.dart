@@ -12,10 +12,8 @@ class ShoppingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.teal,
-      body:
-      SafeArea(
-        child:
-        Column(
+      body: SafeArea(
+        child: Column(
           children: [
             Expanded(child: GetX<ShoppingController>(
               builder: (controller) {
@@ -24,16 +22,18 @@ class ShoppingPage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Card(
                         margin: const EdgeInsets.all(12),
-                        child:Padding(
+                        child: Padding(
                           padding: const EdgeInsets.all(16.0),
-                          child:  Column(
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         '${controller.products[index].productName}',
@@ -65,8 +65,8 @@ class ShoppingPage extends StatelessWidget {
                                     },
                                     style: ButtonStyle(
                                         backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.blue)),
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.blue)),
                                     child: Text('Add to Cart'),
                                   ),
                                 ],
@@ -74,7 +74,6 @@ class ShoppingPage extends StatelessWidget {
                             ],
                           ),
                         ),
-
                       );
                     });
               },
@@ -82,10 +81,14 @@ class ShoppingPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            GetX<CartController>(builder: (controller){
-              return  Text('Total amount:\$ ${controller.totalPrice}',
-                style: TextStyle(fontSize: 24),);
-            },),
+            GetX<CartController>(
+              builder: (controller) {
+                return Text(
+                  'Total amount:\$ ${controller.totalPrice}',
+                  style: TextStyle(fontSize: 24),
+                );
+              },
+            ),
 
             // GetBuilder<CartController>(
             //   builder: (controller) {
@@ -108,7 +111,6 @@ class ShoppingPage extends StatelessWidget {
             )
           ],
         ),
-
       ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () {},
@@ -125,7 +127,6 @@ class ShoppingPage extends StatelessWidget {
               );
             },
           )),
-
     );
   }
 }
